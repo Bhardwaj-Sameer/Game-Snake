@@ -1,6 +1,7 @@
 package game;
 
 import javax.swing.JFrame;
+import game.GamePanel;
 
 public class GameFrame extends JFrame{
     public GameFrame(){
@@ -9,10 +10,10 @@ public class GameFrame extends JFrame{
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setResizable(false);
         this.setSize(600,600);
-        this.setVisible(true);
-
+        
         GamePanel panel=new GamePanel();
         this.add(panel);
+        this.setVisible(true);
 
     }
 }

@@ -6,12 +6,13 @@ import java.util.ArrayList;
 public class Snake {
 
     ArrayList<Rectangle> body;
+
     public Snake(){
         body = new ArrayList<>();
         
-        body.add(new Rectangle(100,300,20,20));
-        body.add(new Rectangle(80,300,20,20));
-        body.add(new Rectangle(60,300,20,20));
+        body.add(new Rectangle(100,100,20,20));
+        body.add(new Rectangle(80,100,20,20));
+        body.add(new Rectangle(60,100,20,20));
     }
 
     public void move(int xDirection, int yDirection){

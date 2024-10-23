@@ -17,4 +17,5 @@ public class GamePanel extends JPanel {
         g.fillRect(100, 100, 50, 50);
     }
 
+    
 }

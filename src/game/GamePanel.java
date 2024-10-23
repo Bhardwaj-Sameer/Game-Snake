@@ -54,7 +54,7 @@ public class GamePanel extends JPanel {
         
 
         for(Rectangle segment: snake.body){
-            g.fillRect(segment.x, segment.y, segment.width, segment.height);
+            g.fillOval(segment.x, segment.y, segment.width, segment.height);
         }
     }
 

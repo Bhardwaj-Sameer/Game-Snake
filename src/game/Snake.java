@@ -16,7 +16,7 @@ public class Snake {
     }
 
     public void move(int xDirection, int yDirection){
-        for(int i = body.size()-1;i>0;i++){
+        for(int i = body.size()-1;i>0;i--){
             body.set(i,new Rectangle(body.get(i-1)));
         }
 

@@ -1,10 +1,12 @@
 package game;
 
-import java.awt.Color;
+import javax.swing.JPanel;
+import javax.swing.Timer;
+
 import java.awt.Graphics;
 import java.awt.Rectangle;
-
-import javax.swing.JPanel;
+import java.awt.Color;
+import java.awt.event.ActionEvent;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
@@ -12,11 +14,21 @@ public class GamePanel extends JPanel {
 
     Snake snake;
     Food food;
+    Timer timer;
+
+    int xDirec=20;
+    int yDirec=0;
 
     public GamePanel() {
         this.setBackground(Color.BLACK);
         snake = new Snake();
         food = new Food();
+        timer = new Timer(100, e ->{
+            snake.move(xDirec,yDirec);
+            repaint();
+        });
+
+        timer.start();
 
         food.spawnFood();
 
@@ -32,18 +44,26 @@ public class GamePanel extends JPanel {
                 switch (key) {
                     case KeyEvent.VK_UP:
                         snake.move(0, -20);
+                        xDirec=0;
+                        yDirec=-20;
                         break;
 
                     case KeyEvent.VK_DOWN:
                         snake.move(0, 20);
+                        xDirec=0;
+                        yDirec=20;
                         break;
 
                     case KeyEvent.VK_RIGHT:
                         snake.move(20, 0);
+                        xDirec=20;
+                        yDirec=0;
                         break;
 
                     case KeyEvent.VK_LEFT:
                         snake.move(-20, 0);
+                        xDirec=-20;
+                        yDirec=0;
                         break;
                 }
                 repaint();

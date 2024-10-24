@@ -11,13 +11,17 @@ import java.awt.event.KeyEvent;
 public class GamePanel extends JPanel {
 
     Snake snake;
+    Food food;
 
     public GamePanel() {
         this.setBackground(Color.BLACK);
         snake = new Snake();
+        food = new Food();
 
+        food.spawnFood();
+
+        //ARROW-KEY INPUT
         this.setFocusable(true); // For keyboard input
-
         this.addKeyListener(new KeyAdapter() {
 
             @Override
@@ -52,10 +56,14 @@ public class GamePanel extends JPanel {
         super.paintComponent(g);
         g.setColor(Color.RED);
         
-
+        //SNAKE
         for(Rectangle segment: snake.body){
             g.fillOval(segment.x, segment.y, segment.width, segment.height);
         }
+
+        //FOOD
+        g.setColor(Color.GREEN);
+        g.fillOval(food.position.x, food.position.y, food.position.width, food.position.height);
     }
 
 }

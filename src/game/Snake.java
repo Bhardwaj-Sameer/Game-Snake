@@ -23,4 +23,8 @@ public class Snake {
         body.get(0).x+=xDirection;
         body.get(0).y+=yDirection;
     }
+
+    public void grow(){
+        this.body.add(new Rectangle(this.body.get(this.body.size()-1)));
+    }
 }

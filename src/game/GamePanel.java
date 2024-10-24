@@ -25,6 +25,12 @@ public class GamePanel extends JPanel {
         food = new Food();
         timer = new Timer(100, e ->{
             snake.move(xDirec,yDirec);
+
+            //FOOD AND SNAKE INTERSECTION
+            if(snake.body.get(0).intersects(food.position)||snake.body.get(1).intersects(food.position)){
+                snake.grow();
+                food.spawnFood();
+            }
             repaint();
         });
 

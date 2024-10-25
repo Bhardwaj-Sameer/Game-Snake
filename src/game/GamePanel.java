@@ -83,8 +83,13 @@ public class GamePanel extends JPanel {
         g.setColor(Color.RED);
         
         //SNAKE
-        for(Rectangle segment: snake.body){
-            g.fillOval(segment.x, segment.y, segment.width, segment.height);
+        for(int i=snake.body.size()-1;i>=0;i--){
+            if(i!=0){
+                g.setColor(Color.red);
+            }else{
+                g.setColor(Color.WHITE);
+            }
+            g.fillOval(snake.body.get(i).x, snake.body.get(i).y, snake.body.get(i).width, snake.body.get(i).height);
         }
 
         //FOOD

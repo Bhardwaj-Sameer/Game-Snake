@@ -8,8 +8,8 @@ public class Food {
 
     public void spawnFood(){
         Random random = new Random();
-        int x = random.nextInt(25)*20;
-        int y = random.nextInt(25)*20;
+        int x = random.nextInt(77)*10;
+        int y = random.nextInt(75)*10;
         position = new Rectangle(x,y, 10,10);
     }
 }

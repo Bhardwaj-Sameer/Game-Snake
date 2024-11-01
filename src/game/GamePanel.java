@@ -20,7 +20,8 @@ public class GamePanel extends JPanel {
     int yDirec=0;
 
     public GamePanel() {
-        this.setBackground(Color.BLACK);
+        this.setBackground(Color.YELLOW);
+        this.setSize(600,600);
         snake = new Snake();
         food = new Food();
         timer = new Timer(100, e ->{
@@ -80,9 +81,18 @@ public class GamePanel extends JPanel {
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-        g.setColor(Color.RED);
+
+        //WALLS
+        g.setColor(Color.BLACK);
+        g.fillRect(0,0,800,20);
+        g.fillRect(766,0,20,770);
+        g.fillRect(0,743,800,20);
+        g.fillRect(0,0,20,770);
+
+
         
         //SNAKE
+        g.setColor(Color.RED);
         for(int i=snake.body.size()-1;i>=0;i--){
             if(i!=0){
                 g.setColor(Color.red);

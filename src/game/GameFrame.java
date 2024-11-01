@@ -13,8 +13,8 @@ public class GameFrame extends JFrame{
         this.setTitle("Snake Game");
         this.setIconImage(snake.getImage());
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setResizable(true);
-        this.setSize(600,600);
+        this.setResizable(false);
+        this.setSize(800,800);
         
         
         GamePanel panel=new GamePanel();
